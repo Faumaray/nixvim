@@ -12,7 +12,7 @@ in {
     plugins.lspsaga = {
       enable = mkEnableOption "lspsaga.nvim";
 
-      package = helpers.mkPackageOption "lspsaga" pkgs.vimPlugins.lspsaga-nvim;
+      package = helpers.mkPackageOption "lspsaga" pkgs.vimPlugins.lspsaga-nvim-original;
 
       signs = {
         use = mkOption {
@@ -220,7 +220,7 @@ in {
       extraConfigLua = ''
         local saga = require 'lspsaga'
 
-        saga.init_lsp_saga(${helpers.toLuaObject lspsagaConfig})
+        saga.setup(${helpers.toLuaObject lspsagaConfig})
       '';
     };
 }
