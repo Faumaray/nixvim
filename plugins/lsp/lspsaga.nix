@@ -12,7 +12,7 @@ in {
     plugins.lspsaga = {
       enable = mkEnableOption "lspsaga.nvim";
 
-      package = helpers.mkPackageOption "lspsaga" pkgs.vimPlugins.lspsaga-nvim-original;
+      package = helpers.mkPackageOption "lspsaga" pkgs.vimPlugins.lspsaga-nvim;
 
       signs = {
         use = mkOption {
